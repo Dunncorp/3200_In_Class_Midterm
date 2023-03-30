@@ -8,16 +8,16 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.example.inclassmidterm.R
 import com.example.inclassmidterm.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
 
-    lateinit var startButton: Button
+    lateinit var homeStartButton: Button
     lateinit var pauseButton: Button
     lateinit var resetButton: Button
-    var startTime = 0
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -38,8 +38,24 @@ class HomeFragment : Fragment() {
         homeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
+
+
         return root
     }
+/*
+    private var startButton: View.OnClickListener = View.OnClickListener {
+
+    }
+
+    private val pauseButton: View.OnClickListener = View.OnClickListener {
+
+    }
+
+    private var resetButton: View.OnClickListener = View.OnClickListener {
+
+    }
+
+ */
 
     override fun onDestroyView() {
         super.onDestroyView()

@@ -5,8 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class DashboardViewModel : ViewModel() {
-    var startTime = System.currentTimeMillis()
-    var currentTime = System.currentTimeMillis()
+    var sTime = System.currentTimeMillis()
     var timeElapsed = System.currentTimeMillis()
 
     private val _text = MutableLiveData<String>().apply {
@@ -15,9 +14,9 @@ class DashboardViewModel : ViewModel() {
     val text: LiveData<String> = _text
 
     fun startTime() {
-        startTime = System.currentTimeMillis()
+        sTime = System.currentTimeMillis()
     }
     fun pauseTime() {
-
+        timeElapsed += (sTime - System.currentTimeMillis())
     }
 }
